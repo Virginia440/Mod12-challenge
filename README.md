@@ -31,12 +31,15 @@ Install the following dependencies an dmocdules from the libraries above
 ## Overview of the analysis
 
 * Purpose of the analysis
+
 Credit risk poses a classification problem that’s inherently imbalanced. This is because healthy loans easily outnumber risky loans. This project follows the model-fit-predict-evaluate pattern. It employs various techniques to train and evaluate models with imbalanced classes. It makes use of a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers. 
 
 * Financial Information on the data.
+
 The dataset used has 75036 healthy loans and 2500 unhealthy loans. A value of 0 in the “loan_status” column means that the loan is healthy. A value of 1 means that the loan has a high risk of defaulting. The data is separated into two DataFrames: y dataframe(label data), represented y the 'loan status' column and and X dataframe(feature data) representing all other columns in the dataset but the loan status column.
 
 * Description of the stages of the machine learning process
+
 1. Read in the CSV file from the Resources folder into a Pandas DataFrame
 2. Create a Series named y that contains the data from the "Default" column of the original DataFrame which is the "loan_status" columnn. Note that this Series will contain the labels. Create a new DataFrame named X that contains the remaining columns from the original DataFrame
 3. Split the label and feature datasets into testing and training sets using the (train_test_split) function.
@@ -61,6 +64,7 @@ The dataset used has 75036 healthy loans and 2500 unhealthy loans. A value of 0 
 
 * Machine Learning Model 2:(oversampled dataset)
   * Description of Model 2 Accuracy, Precision, and Recall scores.
+
     The precision is on what could referred to as the perfect mark for the 0 class (1.00), but lower for the 1 class (0.84). Recall that 0 represents healthy loans. And, 1 represents high risk loans. The model does an almost similar prediction as that that uses original data and with a precision of (0.85) versus the model that used the oversampled data produced a precision of (0.84). So, the logistic regression model that used the original imbalanced data did just slightly better by (0.01) in making predictions for the 1 class.
 
     The recall for the 0 and 1 classes has a good balance(0.99 and 0.99). However, compared to the model that used original data which had a recall of (0.91), the model that used the oversampled data was dramatically more accurate at predicting the high risk loans. 
@@ -70,8 +74,8 @@ The dataset used has 75036 healthy loans and 2500 unhealthy loans. A value of 0 
 ---
 
 ## Summary
+
 Both models have almost similar predictions. However, the model using resampled data was much better at detecting high risk loans than the model generated using the original, imbalanced dataset.
-## Contributors
 
 
 ## License
